@@ -1,0 +1,5 @@
+*.iso
+.vagrant
+*.box
+packer.exe
+Vagrantfile
