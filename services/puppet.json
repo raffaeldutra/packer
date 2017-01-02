@@ -6,7 +6,7 @@
     "iso_checksum": "{{user `iso_checksum`}}",
     "iso_checksum_type": "{{user `iso_checksum_type`}}",
     "output_directory": "output-debian-8.6-amd64-{{build_type}}",
-    "vm_name": "packer-debian-8.6-amd64",
+    "vm_name": "puppet-debian-8.6-amd64",
     "disk_size": "{{user `disk_size`}}",
     "guest_additions_path": "VBoxGuestAdditions.iso",
     "headless": "{{user `headless`}}",
@@ -32,18 +32,19 @@
     "scripts": [
       "scripts/debian/virtualbox.sh",
       "scripts/common/vagrant.sh",
-      "scripts/docker/install.sh"
+      "scripts/common/packages.sh",
+      "scripts/puppet/install.sh"
     ]
   }],
   "post-processors": [{
     "type": "vagrant",
     "compression_level": "{{user `compression_level`}}",
-    "output": "debian-8.6-amd64-{{.Provider}}.box"
+    "output": "puppet-debian-8.6-amd64-{{.Provider}}.box"
   }],
   "variables": {
     "compression_level": "6",
     "cpus": "1",
-    "disk_size": "40000",
+    "disk_size": "10000",
     "headless": "false",
     "iso_checksum": "9479c5c2df72ae3878116c43fb42eefae53d1fe363ce514a6afc8289064b9f5f",
     "iso_checksum_type": "sha256",
