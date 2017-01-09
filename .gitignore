@@ -4,3 +4,4 @@
 packer.exe
 Vagrantfile
 output*
+packer_cache
