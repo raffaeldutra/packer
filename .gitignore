@@ -3,3 +3,5 @@
 *.box
 packer.exe
 Vagrantfile
+packer_cache
+output*
