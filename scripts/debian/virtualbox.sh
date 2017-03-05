@@ -1,10 +1,11 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 set -e
 set -x
 
-if [ "$PACKER_BUILDER_TYPE" != "virtualbox-iso" ]; then
-  exit 0
+if [ "$PACKER_BUILDER_TYPE" != "virtualbox-iso" ]
+then
+    exit 0
 fi
 
 sudo apt-get -y install bzip2
@@ -20,7 +21,7 @@ sudo umount /mnt/
 rm -f ~/VBoxGuestAdditions.iso
 
 VBOX_VERSION=$(cat ~/.vbox_version)
-if [ "$VBOX_VERSION" == '5.1.8' ]; then
-  # https://www.virtualbox.org/ticket/12879
-  sudo ln -s "/opt/VBoxGuestAdditions-$VBOX_VERSION/lib/VBoxGuestAdditions" /usr/lib/VBoxGuestAdditions
+if [ "$VBOX_VERSION" == '5.1.8' ]
+then
+    sudo ln -s "/opt/VBoxGuestAdditions-$VBOX_VERSION/lib/VBoxGuestAdditions" /usr/lib/VBoxGuestAdditions
 fi
