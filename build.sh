@@ -1,4 +1,4 @@
-#!/usr/bin/env Bash
+#!/usr/bin/env bash
 # Rafael Dutra <raffaeldutra@gmail.com>
 # Build file
 
